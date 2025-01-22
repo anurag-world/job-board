@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import styles from '@/styles/Home.module.css';
 
 export default function Home() {
-  const [query, setQuery] = useState('');
+  const [skills, setSkills] = useState('');
+  const [location, setLocation] = useState('');
 
   function handleSearch(): void {
     throw new Error('Function not implemented.');
@@ -22,8 +23,8 @@ export default function Home() {
           <div className={styles.formContainer}>
             <input
               type="text"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
+              value={skills}
+              onChange={(e) => setSkills(e.target.value)}
               placeholder="Enter skills / designations / companies"
               className={styles.formControl}
               style={{ minWidth: 350 }}
@@ -36,8 +37,8 @@ export default function Home() {
             <div className={styles.pipe}></div>
             <input
               type="text"
-              value=""
-              onChange={(e) => console.log(e.target.value)}
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
               placeholder="Enter Location"
               className={styles.formControl}
               style={{ minWidth: 210 }}
