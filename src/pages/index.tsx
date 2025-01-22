@@ -23,9 +23,10 @@ export default function Home() {
               placeholder="Enter skills / designations / companies"
               className={styles.formControl}
               style={{ minWidth: 320 }}
+              required
             />
             <div className={styles.pipe}></div>
-            <select className={styles.selectFormControl}>
+            <select className={styles.selectFormControl} required>
               <option>No Experience</option>
             </select>
             <div className={styles.pipe}></div>
@@ -36,6 +37,7 @@ export default function Home() {
               placeholder="Enter Location"
               className={styles.formControl}
               style={{ minWidth: 200 }}
+              required
             />
             <button type="submit" className={styles.search}>
               Search

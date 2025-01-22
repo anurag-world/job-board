@@ -17,12 +17,8 @@
 }
 .formContainer {
   display: flex;
-  align-items: center;
   box-shadow: 0 25px 60px rgba(113, 106, 147, 0.2);
-  border-top-left-radius: 2.5rem;
-  border-bottom-left-radius: 2.5rem;
-  border-top-right-radius: 1.5rem;
-  border-bottom-right-radius: 1.5rem;
+  border-radius: 2.5rem;
   padding: 1rem 2rem;
   background: white;
 }
@@ -34,7 +30,6 @@
   background: white;
   font-size: 1.125em;
   font-weight: 500;
-  line-height: 23px;
 }
 .formControl:focus {
   outline: none;
@@ -50,7 +45,7 @@
   background: white;
   font-size: 1.125em;
   font-weight: 500;
-  line-height: 23px;
+  margin-bottom: 0.1rem;
 }
 .selectFormControl:focus {
   outline: none;
@@ -63,10 +58,10 @@
 }
 .search {
   margin-left: 0.875rem;
-  padding: 1rem 2.19rem;
+  padding: 0.625rem 2.19rem;
   border: none;
   border-radius: 2.5rem;
-  background: blue;
+  background: #3f51b5;
   color: white;
   font-weight: 700;
   font-size: 1em;
