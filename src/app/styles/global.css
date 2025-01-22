@@ -30,7 +30,6 @@ body {
   line-height: 1.4;
   color: var(--foreground);
   background: var(--background);
-  padding-top: 8rem;
 }
 h1,
 h2,
