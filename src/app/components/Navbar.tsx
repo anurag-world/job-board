@@ -15,10 +15,10 @@ export default function Navbar() {
         {/* Navigation Links */}
         <div className="hidden md:flex items-center">
           <div className="mr-4">
-            <button className="mr-3 border border-solid border-white text-white px-4 py-2 rounded-2xl text-lg">
+            <button className="mr-3 border border-solid border-white text-white px-4 py-2 rounded-xl">
               Login
             </button>
-            <button className="bg-white text-blue-700 px-4 py-2 rounded-2xl text-lg">
+            <button className="bg-white text-blue-700 px-4 py-2 rounded-xl">
               Sign Up
             </button>
           </div>
@@ -28,7 +28,7 @@ export default function Navbar() {
           <div className="ml-4">
             <Link
               href="/jobs"
-              className="text-white hover:text-slate-200 text-lg capitalize"
+              className="text-white hover:text-slate-200 capitalize"
             >
               For employers
             </Link>
