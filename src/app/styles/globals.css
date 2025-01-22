@@ -28,9 +28,3 @@ body {
   color: var(--foreground);
   background: var(--background);
 }
-input,
-button {
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-}

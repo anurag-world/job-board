@@ -11,7 +11,11 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <header id={styles.header}>
-        <h1 className={styles.title}>Find Your Dream Job</h1>
+        <h1 className={styles.title}>Your Dream Job Awaits!</h1>
+        <p>
+          Discover thousands of opportunities tailored to your skills and
+          aspirations.
+        </p>
       </header>
       <section>
         <form onSubmit={handleSearch}>
@@ -22,7 +26,7 @@ export default function Home() {
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Enter skills / designations / companies"
               className={styles.formControl}
-              style={{ minWidth: 320 }}
+              style={{ minWidth: 350 }}
               required
             />
             <div className={styles.pipe}></div>
@@ -36,7 +40,7 @@ export default function Home() {
               onChange={(e) => console.log(e.target.value)}
               placeholder="Enter Location"
               className={styles.formControl}
-              style={{ minWidth: 200 }}
+              style={{ minWidth: 210 }}
               required
             />
             <button type="submit" className={styles.search}>
