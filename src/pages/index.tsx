@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styles from '@/styles/Home.module.css';
 import Header from './home/Header';
 import SearchSection from './home/SearchSection';
+import SearchByCompany from './home/SearchByCompany';
 
 export default function Home() {
   const [skills, setSkills] = useState('');
@@ -22,6 +23,7 @@ export default function Home() {
         setLocation={setLocation}
         handleSearch={handleSearch}
       />
+      <SearchByCompany />
     </div>
   );
 }
