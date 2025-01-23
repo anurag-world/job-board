@@ -11,6 +11,7 @@
 }
 .innerContainer {
   width: 80%;
+  padding-right: 1rem;
   padding-bottom: 1.5rem;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -21,4 +22,34 @@
   min-width: 120%;
   display: flex;
   gap: 1rem;
+}
+@media (max-width: 1720px) {
+  .companyCard {
+    min-width: 150%;
+  }
+}
+@media (max-width: 1380px) {
+  .companyCard {
+    min-width: 200%;
+  }
+}
+@media (max-width: 1040px) {
+  .companyCard {
+    min-width: 250%;
+  }
+}
+@media (max-width: 830px) {
+  .companyCard {
+    min-width: 300%;
+  }
+}
+@media (max-width: 690px) {
+  .companyCard {
+    min-width: 350%;
+  }
+}
+@media (max-width: 590px) {
+  .companyCard {
+    min-width: 400%;
+  }
 }
