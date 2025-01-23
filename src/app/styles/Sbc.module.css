@@ -6,10 +6,17 @@
   grid-template-rows: 1fr;
   padding: 50px 0;
 }
+.header {
+  width: 80%;
+}
 .innerContainer {
-  min-width: 80%;
+  width: 80%;
+  padding-bottom: 1.5rem;
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
 .companyCard {
+  min-width: 120%;
   display: flex;
   gap: 1rem;
 }

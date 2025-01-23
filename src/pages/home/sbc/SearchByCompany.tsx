@@ -9,17 +9,18 @@ const truncateString = (str: string, num: number): string => {
 };
 
 export default function SearchByCompany() {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [data, setData] = useState(apiData.data);
   console.log(data);
   return (
     <div className={styles.container}>
-      <div className={styles.innerContainer}>
-        <div>
-          <h1 className="font-roboto capitalize text-2xl font-semibold tracking-wide text-blue-700 mb-6">
-            Companies hiring right now
-          </h1>
-        </div>
+      <div className={styles.header}>
+        <h1 className="font-roboto capitalize text-2xl font-semibold tracking-wide text-blue-700 mb-6">
+          Companies hiring right now
+        </h1>
+      </div>
 
+      <div className={styles.innerContainer}>
         {/* company card */}
         <div className={styles.companyCard}>
           {data.map(
