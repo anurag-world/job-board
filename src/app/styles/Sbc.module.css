@@ -7,10 +7,9 @@
   padding: 50px 0;
 }
 .innerContainer {
-  width: 80%;
+  min-width: 80%;
 }
 .companyCard {
   display: flex;
-  align-items: center;
   gap: 1rem;
 }

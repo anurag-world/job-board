@@ -1,19 +1,38 @@
 import styles from '@/styles/Sbc.module.css';
 import CompanyCard from './CompanyCard';
+import { useState } from 'react';
+import apiData from '@/data/apiMock';
+
+const truncateString = (str: string, num: number): string => {
+  if (str.length > num) return str.slice(0, num) + ' ...';
+  else return str;
+};
 
 export default function SearchByCompany() {
+  const [data, setData] = useState(apiData.data);
+  console.log(data);
   return (
     <div className={styles.container}>
       <div className={styles.innerContainer}>
         <div>
           <h1 className="font-roboto capitalize text-2xl font-semibold tracking-wide text-blue-700 mb-6">
-            Top companies hiring
+            Companies hiring right now
           </h1>
         </div>
 
         {/* company card */}
         <div className={styles.companyCard}>
-          <CompanyCard />
+          {data.map(
+            (company) =>
+              company.employer_logo !== null && (
+                <CompanyCard
+                  key={company.job_id}
+                  employer_name={company.employer_name}
+                  employer_logo={company.employer_logo}
+                  job_title={truncateString(company.job_title, 34)}
+                />
+              )
+          )}
         </div>
       </div>
     </div>
