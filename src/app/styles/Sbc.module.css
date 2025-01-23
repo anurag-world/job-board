@@ -12,6 +12,8 @@
 .innerContainer {
   width: 80%;
   padding-bottom: 1.5rem;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
   overflow-x: scroll;
   overflow-y: hidden;
 }
