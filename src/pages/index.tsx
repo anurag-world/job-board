@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import styles from '@/styles/Home.module.css';
+import Header from './home/Header';
+import SearchSection from './home/SearchSection';
+import SearchByCompany from './home/sbc/SearchByCompany';
 
 export default function Home() {
   const [skills, setSkills] = useState('');
@@ -10,46 +13,19 @@ export default function Home() {
   }
 
   return (
-    <div className={styles.container}>
-      <header id={styles.header}>
-        <h1 className={styles.title}>Your Dream Job Awaits!</h1>
-        <p>
-          Discover thousands of opportunities tailored to your skills and
-          aspirations.
-        </p>
-      </header>
-      <section>
-        <form onSubmit={handleSearch}>
-          <div className={styles.formContainer}>
-            <input
-              type="text"
-              value={skills}
-              onChange={(e) => setSkills(e.target.value)}
-              placeholder="Enter skills / designations / companies"
-              className={styles.formControl}
-              style={{ minWidth: 350 }}
-              required
-            />
-            <div className={styles.pipe}></div>
-            <select className={styles.selectFormControl} required>
-              <option>No Experience</option>
-            </select>
-            <div className={styles.pipe}></div>
-            <input
-              type="text"
-              value={location}
-              onChange={(e) => setLocation(e.target.value)}
-              placeholder="Enter Location"
-              className={styles.formControl}
-              style={{ minWidth: 210 }}
-              required
-            />
-            <button type="submit" className={styles.search}>
-              Search
-            </button>
-          </div>
-        </form>
-      </section>
+    <div>
+      <div className={styles.container}>
+        <Header />
+        <SearchSection
+          styles={styles}
+          skills={skills}
+          setSkills={setSkills}
+          location={location}
+          setLocation={setLocation}
+          handleSearch={handleSearch}
+        />
+      </div>
+      <SearchByCompany />
     </div>
   );
 }

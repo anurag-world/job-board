@@ -1,33 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-#header {
-  width: 100%;
-  text-align: center;
-}
-#header .title {
-  display: inline-block;
-  font-family: 'Roboto', serif;
-  font-size: 50px;
-  font-optical-sizing: auto;
-  font-weight: 900;
-  line-height: 54px;
-  letter-spacing: 0.2rem;
-  color: #3f51b5;
-  margin: 1.5rem auto;
-}
-#header p {
-  display: block;
-  font-family: 'Open Sans', serif;
-  font-size: 1.25rem;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: italic;
-  margin-bottom: 1.75rem;
+  margin-top: 5rem;
 }
 .formContainer {
   display: flex;
@@ -77,11 +53,11 @@
   padding: 0.625rem 2.19rem;
   border: none;
   border-radius: 2.5rem;
-  background: #3f51b5;
+  background: #1d4ed8;
   color: white;
   font-family: 'Open Sans', serif;
   font-weight: 600;
-  font-size: 1em;
+  font-size: 1.125rem;
   line-height: 1.2;
   cursor: pointer;
 }
