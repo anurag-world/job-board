@@ -1,28 +1,46 @@
+import { useRef } from 'react';
 import styles from '@/styles/Sbc.module.css';
 import CompanyCard from './CompanyCard';
-import { useState } from 'react';
-import apiData from '@/data/apiMock';
+import LeftScrollButtons from '@/app/components/LeftScrollButtons';
+import RightScrollButtons from '@/app/components/RightScrollButtons';
+import { CompanyCardProps } from '@/types/Job';
 
-const truncateString = (str: string, num: number): string => {
-  if (str.length > num) return str.slice(0, num) + ' ...';
-  else return str;
-};
+interface CompanyProps<T> {
+  [key: string]: Array<T>;
+}
 
-export default function SearchByCompany() {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [data, setData] = useState(apiData.data);
-  console.log(data);
+export default function SearchByCompany({
+  data,
+}: CompanyProps<CompanyCardProps>) {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollContainerRef.current) {
+      const { scrollLeft, clientWidth } = scrollContainerRef.current;
+      const scrollAmount = direction === 'left' ? -clientWidth : clientWidth;
+      scrollContainerRef.current.scrollTo({
+        left: scrollLeft + scrollAmount,
+        behavior: 'smooth',
+      });
+    }
+  };
+
+  const truncateString = (str: string, num: number): string => {
+    if (str.length > num) return str.slice(0, num) + ' ...';
+    else return str;
+  };
+
   return (
     <div className={styles.container}>
-      <div className={styles.header}>
+      <div className="container pl-4 max-sm:max-w-[490px]">
         <h1 className="font-roboto capitalize text-2xl font-semibold tracking-wide text-blue-700 mb-6">
           Companies hiring right now
         </h1>
       </div>
 
-      <div className={styles.innerContainer}>
-        {/* company card */}
-        <div className={styles.companyCard}>
+      <div className="relative container max-sm:max-w-[490px]">
+        {/* Company card - Scrollable container */}
+        <div ref={scrollContainerRef} className={styles.companyCard}>
           {data.map(
             (company) =>
               company.employer_logo !== null && (
@@ -35,6 +53,12 @@ export default function SearchByCompany() {
               )
           )}
         </div>
+
+        {/* Left Arrow */}
+        <LeftScrollButtons onClick={() => scroll('left')} />
+
+        {/* Right Arrow */}
+        <RightScrollButtons onClick={() => scroll('right')} />
       </div>
     </div>
   );
