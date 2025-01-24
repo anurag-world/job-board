@@ -1,17 +1,16 @@
+import { useRef } from 'react';
 import styles from '@/styles/Sbc.module.css';
 import CompanyCard from './CompanyCard';
-import { useRef, useState } from 'react';
-import apiData from '@/data/apiMock';
 import ScrollButtons from '@/app/components/ScrollButtons';
+import { CompanyCardProps } from '@/types/Job';
 
-const truncateString = (str: string, num: number): string => {
-  if (str.length > num) return str.slice(0, num) + ' ...';
-  else return str;
-};
+interface CompanyProps<T> {
+  [key: string]: Array<T>;
+}
 
-export default function SearchByCompany() {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [data, setData] = useState(apiData.data);
+export default function SearchByCompany({
+  data,
+}: CompanyProps<CompanyCardProps>) {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const scroll = (direction: 'left' | 'right') => {
@@ -23,6 +22,11 @@ export default function SearchByCompany() {
         behavior: 'smooth',
       });
     }
+  };
+
+  const truncateString = (str: string, num: number): string => {
+    if (str.length > num) return str.slice(0, num) + ' ...';
+    else return str;
   };
 
   return (
