@@ -15,18 +15,9 @@ export default function Home() {
     throw new Error('Function not implemented.');
   }
 
-  const selectedData: CompanyCardProps[] = apiData.data.map(
-    ({ job_id, employer_name, employer_logo, job_title }) => ({
-      job_id,
-      employer_name,
-      employer_logo,
-      job_title,
-    })
-  );
-
   useEffect(() => {
-    setData(selectedData);
-  }, [selectedData]);
+    setData(apiData.data);
+  }, []);
 
   return (
     <div>
