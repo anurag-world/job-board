@@ -7,14 +7,6 @@
   grid-template-rows: 1fr;
   padding: 50px 0;
 }
-.header {
-  width: 75%;
-  padding-left: 1rem;
-}
-.innerContainer {
-  position: relative;
-  width: 75%;
-}
 .companyCard {
   display: flex;
   gap: 1rem;

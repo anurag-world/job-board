@@ -2,6 +2,7 @@ import styles from '@/styles/Sbc.module.css';
 import CompanyCard from './CompanyCard';
 import { useRef, useState } from 'react';
 import apiData from '@/data/apiMock';
+import ScrollButtons from '@/app/components/ScrollButtons';
 
 const truncateString = (str: string, num: number): string => {
   if (str.length > num) return str.slice(0, num) + ' ...';
@@ -26,13 +27,13 @@ export default function SearchByCompany() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.header}>
+      <div className="container pl-4">
         <h1 className="font-roboto capitalize text-2xl font-semibold tracking-wide text-blue-700 mb-6">
           Companies hiring right now
         </h1>
       </div>
 
-      <div className={styles.innerContainer}>
+      <div className="relative container">
         {/* Company card - Scrollable container */}
         <div ref={scrollContainerRef} className={styles.companyCard}>
           {data.map(
@@ -49,20 +50,10 @@ export default function SearchByCompany() {
         </div>
 
         {/* Left Arrow */}
-        <button
-          onClick={() => scroll('left')}
-          className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-white text-black border border-solid border-gray-200 p-2 w-10 rounded-full shadow-md hover:bg-gray-50"
-        >
-          &#8592;
-        </button>
+        <ScrollButtons direction="left" scroll={scroll} />
 
         {/* Right Arrow */}
-        <button
-          onClick={() => scroll('right')}
-          className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white text-black border border-solid border-gray-200 p-2 w-10 rounded-full shadow-md hover:bg-gray-50"
-        >
-          &#8594;
-        </button>
+        <ScrollButtons direction="right" scroll={scroll} />
       </div>
     </div>
   );
