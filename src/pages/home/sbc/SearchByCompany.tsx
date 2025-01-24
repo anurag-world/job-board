@@ -1,7 +1,8 @@
 import { useRef } from 'react';
 import styles from '@/styles/Sbc.module.css';
 import CompanyCard from './CompanyCard';
-import ScrollButtons from '@/app/components/ScrollButtons';
+import LeftScrollButtons from '@/app/components/LeftScrollButtons';
+import RightScrollButtons from '@/app/components/RightScrollButtons';
 import { CompanyCardProps } from '@/types/Job';
 
 interface CompanyProps<T> {
@@ -54,10 +55,10 @@ export default function SearchByCompany({
         </div>
 
         {/* Left Arrow */}
-        <ScrollButtons direction="left" scroll={scroll} />
+        <LeftScrollButtons onClick={() => scroll('left')} />
 
         {/* Right Arrow */}
-        <ScrollButtons direction="right" scroll={scroll} />
+        <RightScrollButtons onClick={() => scroll('right')} />
       </div>
     </div>
   );
