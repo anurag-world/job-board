@@ -32,13 +32,13 @@ export default function SearchByCompany({
 
   return (
     <div className={styles.container}>
-      <div className="container pl-4">
+      <div className="container pl-4 max-sm:max-w-[490px]">
         <h1 className="font-roboto capitalize text-2xl font-semibold tracking-wide text-blue-700 mb-6">
           Companies hiring right now
         </h1>
       </div>
 
-      <div className="relative container">
+      <div className="relative container max-sm:max-w-[490px]">
         {/* Company card - Scrollable container */}
         <div ref={scrollContainerRef} className={styles.companyCard}>
           {data.map(
