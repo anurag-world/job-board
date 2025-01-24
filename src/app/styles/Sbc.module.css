@@ -2,26 +2,29 @@
 .container {
   width: 100%;
   display: grid;
+  justify-content: center;
   place-items: center;
   grid-template-rows: 1fr;
   padding: 50px 0;
 }
 .header {
-  width: 80%;
+  width: 75%;
+  padding-left: 1rem;
 }
 .innerContainer {
-  width: 80%;
-  padding-right: 1rem;
-  padding-bottom: 1.5rem;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  overflow-x: scroll;
-  overflow-y: hidden;
+  position: relative;
+  width: 75%;
 }
 .companyCard {
-  min-width: 120%;
   display: flex;
   gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 @media (max-width: 1720px) {
   .companyCard {

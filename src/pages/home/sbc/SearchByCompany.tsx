@@ -1,6 +1,6 @@
 import styles from '@/styles/Sbc.module.css';
 import CompanyCard from './CompanyCard';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import apiData from '@/data/apiMock';
 
 const truncateString = (str: string, num: number): string => {
@@ -11,7 +11,19 @@ const truncateString = (str: string, num: number): string => {
 export default function SearchByCompany() {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [data, setData] = useState(apiData.data);
-  console.log(data);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollContainerRef.current) {
+      const { scrollLeft, clientWidth } = scrollContainerRef.current;
+      const scrollAmount = direction === 'left' ? -clientWidth : clientWidth;
+      scrollContainerRef.current.scrollTo({
+        left: scrollLeft + scrollAmount,
+        behavior: 'smooth',
+      });
+    }
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.header}>
@@ -21,8 +33,8 @@ export default function SearchByCompany() {
       </div>
 
       <div className={styles.innerContainer}>
-        {/* company card */}
-        <div className={styles.companyCard}>
+        {/* Company card - Scrollable container */}
+        <div ref={scrollContainerRef} className={styles.companyCard}>
           {data.map(
             (company) =>
               company.employer_logo !== null && (
@@ -35,6 +47,22 @@ export default function SearchByCompany() {
               )
           )}
         </div>
+
+        {/* Left Arrow */}
+        <button
+          onClick={() => scroll('left')}
+          className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-white text-black border border-solid border-gray-200 p-2 w-10 rounded-full shadow-md hover:bg-gray-50"
+        >
+          &#8592;
+        </button>
+
+        {/* Right Arrow */}
+        <button
+          onClick={() => scroll('right')}
+          className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white text-black border border-solid border-gray-200 p-2 w-10 rounded-full shadow-md hover:bg-gray-50"
+        >
+          &#8594;
+        </button>
       </div>
     </div>
   );

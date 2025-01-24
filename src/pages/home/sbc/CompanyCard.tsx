@@ -8,7 +8,7 @@ export default function CompanyCard({
   job_title,
 }: CompanyCardProps) {
   return (
-    <div className="flex flex-col items-center justify-between gap-2 w-48 border border-solid border-gray-200 rounded-2xl text-center p-3 shadow-md hover:shadow-lg">
+    <div className="flex flex-shrink-0 flex-col items-center justify-between gap-2 w-48 border border-solid border-gray-200 rounded-2xl bg-white text-center p-3 shadow-md hover:shadow-lg">
       <span className="block font-semibold">{employer_name}</span>
       <div className="flex items-center justify-center h-14">
         <Image
