@@ -5,6 +5,8 @@ import SearchSection from './home/SearchSection';
 import SearchByCompany from './home/sbc/SearchByCompany';
 import apiData from '@/data/apiMock';
 import { CompanyCardProps } from '@/types/Job';
+import ScrollContainer from './home/sbc/ScrollContainer';
+import CompanyCardContainer from './home/sbc/CompanyCardContainer';
 
 export default function Home() {
   const [skills, setSkills] = useState('');
@@ -31,6 +33,10 @@ export default function Home() {
         handleSearch={handleSearch}
       />
       <SearchByCompany data={data} />
+      <ScrollContainer
+        title="Remote Jobs"
+        content={<CompanyCardContainer data={data} />}
+      />
     </div>
   );
 }
