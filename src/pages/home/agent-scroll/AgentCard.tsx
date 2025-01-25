@@ -1,12 +1,12 @@
-import { CompanyCardProps } from '@/types/Job';
+import { JobProps } from '@/types/Job';
 import Image from 'next/image';
 import React from 'react';
 
-export default function CompanyCard({
+export default function AgentCard({
   employer_name,
   employer_logo,
   job_title,
-}: CompanyCardProps) {
+}: JobProps) {
   let nonNullEmployerLogo = '';
 
   if (employer_logo !== null) {

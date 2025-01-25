@@ -18,7 +18,7 @@ export default function SearchSection({
   handleSearch,
 }: SearchProps) {
   return (
-    <section className="flex justify-center mb-12">
+    <section className="flex justify-center mb-20">
       <form onSubmit={handleSearch}>
         <div className={styles.formContainer}>
           <input

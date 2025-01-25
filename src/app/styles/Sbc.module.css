@@ -2,10 +2,20 @@
 .container {
   width: 100%;
   display: grid;
-  justify-content: center;
+  justify-content: start;
   place-items: center;
   grid-template-rows: 1fr;
-  padding: 50px 0;
+  padding-bottom: 50px;
+}
+@media (max-width: 1280px) {
+  .container {
+    justify-content: center;
+  }
+}
+@media (min-width: 1680px) {
+  .container {
+    padding-left: 150px;
+  }
 }
 .companyCard {
   display: flex;
