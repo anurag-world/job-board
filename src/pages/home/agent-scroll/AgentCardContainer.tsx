@@ -1,9 +1,9 @@
-import { CompanyCardProps } from '@/types/Job';
+import { JobProps } from '@/types/Job';
 import { truncateString } from '@/functions/strings';
 import AgentCard from './AgentCard';
 
 interface AgentCardContainerProps {
-  data: CompanyCardProps[];
+  data: JobProps[];
 }
 
 export default function AgentCardContainer({ data }: AgentCardContainerProps) {
