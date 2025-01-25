@@ -14,10 +14,8 @@ export default function CompanyCard({
   }
 
   return (
-    <div className="flex flex-shrink-0 flex-col items-center justify-between gap-2 w-48 border border-solid border-gray-200 rounded-2xl bg-white text-center p-3 shadow-md hover:shadow-lg">
-      <span className="block font-roboto font-semibold text-gray-900">
-        {employer_name}
-      </span>
+    <div className="flex flex-shrink-0 flex-col items-center justify-between gap-2 w-48 border border-solid border-gray-200 rounded-2xl bg-white text-center p-3 shadow hover:shadow-md">
+      <span className="block font-roboto font-semibold">{employer_name}</span>
       <div className="flex items-center justify-center h-14">
         <Image
           src={nonNullEmployerLogo}
@@ -28,7 +26,7 @@ export default function CompanyCard({
         />
       </div>
       <div className="flex flex-col justify-between w-full h-[100px]">
-        <span className="block font-open-sans text-xs text-gray-900 mb-4 ">
+        <span className="block font-open-sans text-xs mb-4 px-1">
           {`${employer_name} is hiring ${job_title}`}
         </span>
         <button className="text-sm font-roboto p-2 bg-sky-100 rounded-2xl text-blue-700 font-semibold">
