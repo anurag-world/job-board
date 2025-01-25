@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from '@/styles/Home.module.css';
 import Header from './home/Header';
 import SearchSection from './home/SearchSection';
