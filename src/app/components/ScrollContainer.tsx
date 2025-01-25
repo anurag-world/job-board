@@ -31,7 +31,7 @@ export default function ScrollContainer({
         {title}
       </h1>
 
-      <div className="relative w-3/5 max-xl:w-11/12">
+      <div className="relative w-3/5 max-xl:w-11/12 px-1">
         {/* Scrollable container */}
         <div ref={scrollContainerRef} className={styles.companyCard}>
           {content}
