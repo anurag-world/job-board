@@ -33,11 +33,11 @@ export default function Home() {
         handleSearch={handleSearch}
       />
       <ScrollContainer
-        title="Companies hiring right now"
+        title="Companies Hiring Right Now"
         content={<CompanyCardContainer data={data} />}
       />
       <ScrollContainer
-        title="Remote Jobs"
+        title="Jobs on LinkedIn"
         content={<RemoteCardContainer data={data} />}
       />
     </div>

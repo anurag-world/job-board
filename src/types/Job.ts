@@ -10,4 +10,5 @@ export type CompanyCardProps = {
   employer_name: string;
   employer_logo: string | null;
   job_title: string;
+  job_publisher?: string;
 };

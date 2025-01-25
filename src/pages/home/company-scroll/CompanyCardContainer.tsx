@@ -17,7 +17,7 @@ export default function CompanyCardContainer({
           company.employer_logo !== null && (
             <CompanyCard
               key={company.job_id}
-              employer_name={company.employer_name}
+              employer_name={truncateString(company.employer_name, 30)}
               employer_logo={company.employer_logo}
               job_title={truncateString(company.job_title, 34)}
             />

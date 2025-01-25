@@ -26,24 +26,26 @@ export default function ScrollContainer({
   };
 
   return (
-    <div className={styles.container}>
-      <div className="container pl-4 max-sm:max-w-[490px]">
-        <h1 className="font-roboto capitalize text-2xl font-semibold tracking-wide text-blue-700 mb-6">
-          {title}
-        </h1>
-      </div>
-
-      <div className="relative container max-sm:max-w-[490px]">
-        {/* Scrollable container */}
-        <div ref={scrollContainerRef} className={styles.companyCard}>
-          {content}
+    <div className="container mx-auto">
+      <div className={styles.container}>
+        <div className="container pl-4 max-sm:max-w-[490px]">
+          <h1 className="font-roboto text-2xl font-semibold tracking-wide text-blue-700 mb-6">
+            {title}
+          </h1>
         </div>
 
-        {/* Left Arrow */}
-        <LeftScrollButtons onClick={() => scroll('left')} />
+        <div className="relative container max-sm:max-w-[490px]">
+          {/* Scrollable container */}
+          <div ref={scrollContainerRef} className={styles.companyCard}>
+            {content}
+          </div>
 
-        {/* Right Arrow */}
-        <RightScrollButtons onClick={() => scroll('right')} />
+          {/* Left Arrow */}
+          <LeftScrollButtons onClick={() => scroll('left')} />
+
+          {/* Right Arrow */}
+          <RightScrollButtons onClick={() => scroll('right')} />
+        </div>
       </div>
     </div>
   );

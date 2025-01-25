@@ -13,7 +13,8 @@ export default function RemoteCardContainer({
     <>
       {data.map(
         (company) =>
-          company.employer_logo !== null && (
+          company.employer_logo !== null &&
+          company.job_publisher === 'LinkedIn' && (
             <RemoteCard
               key={company.job_id}
               employer_name={company.employer_name}

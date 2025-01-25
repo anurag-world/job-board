@@ -2,10 +2,10 @@
 .container {
   width: 100%;
   display: grid;
-  justify-content: center;
+  justify-content: flex-start;
   place-items: center;
   grid-template-rows: 1fr;
-  padding: 50px 0;
+  padding-bottom: 50px;
 }
 .companyCard {
   display: flex;
