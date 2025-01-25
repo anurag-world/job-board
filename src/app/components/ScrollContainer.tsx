@@ -1,7 +1,7 @@
 import { Component, useRef } from 'react';
 import styles from '@/styles/Sbc.module.css';
-import LeftScrollButtons from '@/app/components/LeftScrollButtons';
-import RightScrollButtons from '@/app/components/RightScrollButtons';
+import LeftScrollButtons from '@/components/LeftScrollButtons';
+import RightScrollButtons from '@/components/RightScrollButtons';
 
 interface ScrollContainerProps {
   title: string;

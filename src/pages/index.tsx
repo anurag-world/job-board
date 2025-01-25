@@ -2,10 +2,9 @@ import React, { useEffect, useState } from 'react';
 import styles from '@/styles/Home.module.css';
 import Header from './home/Header';
 import SearchSection from './home/SearchSection';
-import SearchByCompany from './home/sbc/SearchByCompany';
 import apiData from '@/data/apiMock';
 import { CompanyCardProps } from '@/types/Job';
-import ScrollContainer from './home/sbc/ScrollContainer';
+import ScrollContainer from '@/components/ScrollContainer';
 import CompanyCardContainer from './home/sbc/CompanyCardContainer';
 
 export default function Home() {
@@ -32,7 +31,10 @@ export default function Home() {
         setLocation={setLocation}
         handleSearch={handleSearch}
       />
-      <SearchByCompany data={data} />
+      <ScrollContainer
+        title="Companies hiring right now"
+        content={<CompanyCardContainer data={data} />}
+      />
       <ScrollContainer
         title="Remote Jobs"
         content={<CompanyCardContainer data={data} />}
