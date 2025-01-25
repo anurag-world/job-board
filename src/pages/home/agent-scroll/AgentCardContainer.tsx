@@ -15,9 +15,9 @@ export default function AgentCardContainer({ data }: AgentCardContainerProps) {
           company.job_publisher === 'LinkedIn' && (
             <AgentCard
               key={company.job_id}
-              employer_name={company.employer_name}
+              employer_name={truncateString(company.employer_name, 28)}
               employer_logo={company.employer_logo}
-              job_title={truncateString(company.job_title, 34)}
+              job_title={truncateString(company.job_title, 28)}
             />
           )
       )}
