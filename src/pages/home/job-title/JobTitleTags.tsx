@@ -14,7 +14,7 @@ export default function JobTitleTags({ data }: JobTitleTagsProps) {
       <div className="flex flex-row flex-wrap justify-center gap-2 container">
         {data.map((job) => (
           <div
-            className="font-open-sans text-xs font-bold border-2 border-solid border-gray-200 px-3 py-2 rounded-full"
+            className="font-open-sans text-xs font-bold text-gray-900 border-2 border-solid border-gray-200 px-3 py-2 rounded-full"
             key={job.job_id}
           >
             {job.job_title}
