@@ -7,6 +7,7 @@ import { JobProps } from '@/types/Job';
 import ScrollContainer from '@/components/ScrollContainer';
 import CompanyCardContainer from './home/company-scroll/CompanyCardContainer';
 import AgentCardContainer from './home/agent-scroll/AgentCardContainer';
+import JobTitleTags from './home/job-title/JobTitleTags';
 
 export default function Home() {
   const [skills, setSkills] = useState('');
@@ -40,6 +41,7 @@ export default function Home() {
         title="Jobs on LinkedIn"
         content={<AgentCardContainer data={data} />}
       />
+      <JobTitleTags data={data} />
     </div>
   );
 }
