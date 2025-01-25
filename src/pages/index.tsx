@@ -5,7 +5,8 @@ import SearchSection from './home/SearchSection';
 import apiData from '@/data/apiMock';
 import { CompanyCardProps } from '@/types/Job';
 import ScrollContainer from '@/components/ScrollContainer';
-import CompanyCardContainer from './home/sbc/CompanyCardContainer';
+import CompanyCardContainer from './home/company-scroll/CompanyCardContainer';
+import RemoteCardContainer from './home/remote-scroll/RemoteCardContainer';
 
 export default function Home() {
   const [skills, setSkills] = useState('');
@@ -37,7 +38,7 @@ export default function Home() {
       />
       <ScrollContainer
         title="Remote Jobs"
-        content={<CompanyCardContainer data={data} />}
+        content={<RemoteCardContainer data={data} />}
       />
     </div>
   );
