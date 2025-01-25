@@ -5,7 +5,7 @@ export type Job = {
   job_country: string;
 };
 
-export type CompanyCardProps = {
+export type JobProps = {
   job_id?: string;
   employer_name: string;
   employer_logo: string | null;
