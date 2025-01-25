@@ -21,17 +21,15 @@ export default function Home() {
 
   return (
     <div>
-      <div className={styles.container}>
-        <Header />
-        <SearchSection
-          styles={styles}
-          skills={skills}
-          setSkills={setSkills}
-          location={location}
-          setLocation={setLocation}
-          handleSearch={handleSearch}
-        />
-      </div>
+      <Header />
+      <SearchSection
+        styles={styles}
+        skills={skills}
+        setSkills={setSkills}
+        location={location}
+        setLocation={setLocation}
+        handleSearch={handleSearch}
+      />
       <SearchByCompany data={data} />
     </div>
   );
