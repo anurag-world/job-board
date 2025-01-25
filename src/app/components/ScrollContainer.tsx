@@ -27,7 +27,7 @@ export default function ScrollContainer({
 
   return (
     <div className={styles.container}>
-      <h1 className="font-roboto text-2xl font-semibold tracking-wide text-blue-700 mb-6">
+      <h1 className="font-roboto text-2xl font-extrabold tracking-wide text-blue-700 mb-6">
         {title}
       </h1>
 

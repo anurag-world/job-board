@@ -8,6 +8,7 @@ import ScrollContainer from '@/components/ScrollContainer';
 import CompanyCardContainer from './home/company-scroll/CompanyCardContainer';
 import AgentCardContainer from './home/agent-scroll/AgentCardContainer';
 import JobTitleTags from './home/job-title/JobTitleTags';
+import RoleTags from './home/RoleTags';
 
 export default function Home() {
   const [skills, setSkills] = useState('');
@@ -42,6 +43,7 @@ export default function Home() {
         content={<AgentCardContainer data={data} />}
       />
       <JobTitleTags data={data} />
+      <RoleTags />
     </div>
   );
 }
