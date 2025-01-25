@@ -6,7 +6,7 @@ import apiData from '@/data/apiMock';
 import { CompanyCardProps } from '@/types/Job';
 import ScrollContainer from '@/components/ScrollContainer';
 import CompanyCardContainer from './home/company-scroll/CompanyCardContainer';
-import RemoteCardContainer from './home/remote-scroll/RemoteCardContainer';
+import AgentCardContainer from './home/agent-scroll/AgentCardContainer';
 
 export default function Home() {
   const [skills, setSkills] = useState('');
@@ -38,7 +38,7 @@ export default function Home() {
       />
       <ScrollContainer
         title="Jobs on LinkedIn"
-        content={<RemoteCardContainer data={data} />}
+        content={<AgentCardContainer data={data} />}
       />
     </div>
   );
