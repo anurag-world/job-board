@@ -9,7 +9,7 @@ export default function RoleTags() {
       <h2 className="text-lg mb-6">
         Select a role to show relevant jobs for it!
       </h2>
-      <div className="grid grid-cols-4 gap-x-4 gap-y-4 pb-12">
+      <div className="grid grid-cols-4 gap-x-4 gap-y-4 pb-12 cursor-pointer">
         {rolesData.map((role, index) => (
           <div
             className="text-center p-4 border border-solid border-gray-200 rounded-2xl shadow hover:shadow-md cursor-pointer"
