@@ -3,6 +3,7 @@ import Image from 'next/image';
 import React from 'react';
 
 export default function CompanyCard({
+  job_id,
   employer_name,
   employer_logo,
   job_title,
@@ -12,6 +13,10 @@ export default function CompanyCard({
   if (employer_logo !== null) {
     nonNullEmployerLogo = employer_logo;
   }
+
+  const handleShowJobs = (companyId: string) => {
+    alert(companyId);
+  };
 
   return (
     <div className="flex flex-shrink-0 flex-col items-center justify-between gap-2 w-48 border border-solid border-gray-200 rounded-2xl bg-white text-center p-3 shadow hover:shadow-md">
@@ -29,7 +34,10 @@ export default function CompanyCard({
         <span className="block font-open-sans text-xs mb-4 px-1">
           {`${employer_name} is hiring ${job_title}`}
         </span>
-        <button className="text-sm font-roboto p-2 bg-sky-100 rounded-2xl text-blue-700 font-semibold">
+        <button
+          onClick={() => handleShowJobs(job_id)}
+          className="text-sm font-roboto p-2 bg-sky-100 rounded-2xl text-blue-700 font-semibold"
+        >
           View Jobs
         </button>
       </div>
