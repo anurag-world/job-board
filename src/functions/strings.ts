@@ -3,4 +3,9 @@ const truncateString = (str: string, num: number): string => {
   else return str;
 };
 
-export { truncateString };
+// Convert spaces to dashes
+const createSlug = (str: string) => {
+  return encodeURIComponent(str.toLowerCase().replace(/\s+/g, '-'));
+};
+
+export { truncateString, createSlug };

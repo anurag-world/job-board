@@ -1,3 +1,4 @@
+import { createSlug } from '@/functions/strings';
 import { JobProps } from '@/types/Job';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
@@ -20,8 +21,10 @@ export default function CompanyCard({
   }
 
   // Navigate to the job detail page
-  const handleShowJobs = (companyId: string) => {
-    router.push(`/job/${companyId}`);
+  const handleShowJobs = () => {
+    const slug = createSlug(`${job_title}-${employer_name}`);
+
+    router.push(`/job/${slug}?id=${job_id}`, `/job/${slug}`);
   };
 
   return (
@@ -41,7 +44,7 @@ export default function CompanyCard({
           {`${employer_name} is hiring ${job_title}`}
         </span>
         <button
-          onClick={() => handleShowJobs(job_id)}
+          onClick={() => handleShowJobs()}
           className="text-sm font-roboto p-2 bg-sky-100 rounded-2xl text-blue-700 font-semibold"
         >
           View Jobs
