@@ -1,5 +1,6 @@
 import { JobProps } from '@/types/Job';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import React from 'react';
 
 export default function CompanyCard({
@@ -8,14 +9,19 @@ export default function CompanyCard({
   employer_logo,
   job_title,
 }: JobProps) {
+  // Router hook
+  const router = useRouter();
+
+  // Get non-null logo
   let nonNullEmployerLogo = '';
 
   if (employer_logo !== null) {
     nonNullEmployerLogo = employer_logo;
   }
 
+  // Navigate to the job detail page
   const handleShowJobs = (companyId: string) => {
-    alert(companyId);
+    router.push(`/job/${companyId}`);
   };
 
   return (
