@@ -1,8 +1,8 @@
-import { createSlug } from '@/functions/strings';
+import React from 'react';
 import { JobProps } from '@/types/Job';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import React from 'react';
+import { createSlug } from '@/functions/strings';
 
 export default function CompanyCard({
   job_id,

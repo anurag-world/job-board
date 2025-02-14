@@ -1,3 +1,5 @@
+import slugify from 'slugify';
+
 const truncateString = (str: string, num: number): string => {
   if (str.length > num) return str.slice(0, num) + ' ...';
   else return str;
@@ -5,7 +7,13 @@ const truncateString = (str: string, num: number): string => {
 
 // Convert spaces to dashes
 const createSlug = (str: string) => {
-  return encodeURIComponent(str.toLowerCase().replace(/\s+/g, '-'));
+  return slugify(str, {
+    replacement: '-',
+    remove: undefined,
+    lower: true,
+    strict: true,
+    trim: true,
+  });
 };
 
 export { truncateString, createSlug };
