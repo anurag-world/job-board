@@ -6,7 +6,7 @@ export interface JobProps {
   job_publisher?: string;
 }
 
-export interface JobDetail {
+export interface JobDetailProps {
   job_title: string;
   employer_name: string;
   employer_logo: string;

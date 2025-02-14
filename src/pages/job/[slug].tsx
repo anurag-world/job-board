@@ -2,20 +2,20 @@ import type { InferGetServerSidePropsType, GetServerSideProps } from 'next';
 import detailMock from '@/data/detailMock';
 import Image from 'next/image';
 import Link from 'next/link';
-import { type JobDetail } from '@/types/Job';
+import { JobDetailProps } from '@/types/Job';
 import Head from 'next/head';
 
 export const getServerSideProps = (async () => {
   // const { id } = context.query;
   // Fetch data from external API
-  const data: JobDetail = detailMock.data[0];
+  const data: JobDetailProps = detailMock.data[0];
   // Pass data to the page via props
   return {
     props: {
       data,
     },
   };
-}) satisfies GetServerSideProps<{ data: JobDetail }>;
+}) satisfies GetServerSideProps<{ data: JobDetailProps }>;
 
 export default function JobDetail({
   data,
