@@ -23,7 +23,7 @@ export default function JobDetail({
   if (!data) return <div>Loading...</div>;
 
   return (
-    <div>
+    <div className="h-screen">
       <Head>
         <title>{`${data.job_title} - ${data.employer_name}: KodeBloc Jobs`}</title>
       </Head>

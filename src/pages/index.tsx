@@ -9,7 +9,6 @@ import CompanyCardContainer from './home/company-scroll/CompanyCardContainer';
 import AgentCardContainer from './home/agent-scroll/AgentCardContainer';
 import JobTitleTags from './home/job-title/JobTitleTags';
 import RoleTags from './home/RoleTags';
-import Footer from './home/Footer';
 import Head from 'next/head';
 
 export default function Home() {
@@ -49,7 +48,6 @@ export default function Home() {
       />
       <JobTitleTags data={data} />
       <RoleTags />
-      <Footer />
     </div>
   );
 }
