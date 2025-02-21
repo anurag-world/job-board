@@ -9,8 +9,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        roboto: ['Roboto', 'serif'],
-        'open-sans': ['Open Sans', 'serif'],
+        roboto: ['var(--font-roboto)'],
+        'open-sans': ['var(--font-open-sans)'],
       },
       colors: {
         background: 'var(--background)',

@@ -21,6 +21,7 @@ export default function AgentCard({
           src={nonNullEmployerLogo}
           width={50}
           height={50}
+          style={{ height: 'auto' }}
           className="rounded"
           alt="logo"
         />

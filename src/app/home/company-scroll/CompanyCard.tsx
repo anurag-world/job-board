@@ -1,8 +1,8 @@
 import React from 'react';
 import { JobProps } from '@/types/Job';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
-import { createSlug } from '@/functions/strings';
+import { useRouter } from 'next/navigation';
+import { createSlug } from '@/lib/functions/strings';
 
 export default function CompanyCard({
   job_id,
@@ -23,8 +23,6 @@ export default function CompanyCard({
   // Navigate to the job detail page
   const handleShowJobs = () => {
     const slug = createSlug(`${job_title}-${employer_name}`);
-
-    // router.push(`/job/${slug}?id=${job_id}`, `/job/${slug}`);
     router.push(`/job/${slug}?id=${job_id}`);
   };
 
@@ -36,6 +34,7 @@ export default function CompanyCard({
           src={nonNullEmployerLogo}
           width={50}
           height={50}
+          style={{ height: 'auto' }}
           className="rounded"
           alt="logo"
         />
