@@ -1,7 +1,7 @@
 import React from 'react';
 import CompanyCard from './CompanyCard';
 import { JobProps } from '@/types/Job';
-import { truncateString } from '@/functions/strings';
+import { truncateString } from '@/lib/functions/strings';
 
 interface CompanyCardContainerProps {
   data: JobProps[];

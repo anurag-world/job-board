@@ -1,32 +1,22 @@
-import type { InferGetServerSidePropsType, GetServerSideProps } from 'next';
-import detailMock from '@/data/detailMock';
+'use client';
+
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { JobDetailProps } from '@/types/Job';
-import Head from 'next/head';
+import detailMock from '@/data/detailMock';
 
-export const getServerSideProps = (async () => {
-  // const { id } = context.query;
-  // Fetch data from external API
-  const data: JobDetailProps = detailMock.data[0];
-  // Pass data to the page via props
-  return {
-    props: {
-      data,
-    },
-  };
-}) satisfies GetServerSideProps<{ data: JobDetailProps }>;
+export default function JobDetail() {
+  const [data, setData] = useState<JobDetailProps>();
 
-export default function JobDetail({
-  data,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  useEffect(() => {
+    setData(detailMock.data[0]);
+  }, []);
+
   if (!data) return <div>Loading...</div>;
 
   return (
     <div className="h-screen">
-      <Head>
-        <title>{`${data.job_title} - ${data.employer_name}: KodeBloc Jobs`}</title>
-      </Head>
       <h1>{data.job_title}</h1>
       <p>
         <strong>Company: </strong>
@@ -37,6 +27,7 @@ export default function JobDetail({
         alt={data.employer_name}
         width={50}
         height={50}
+        style={{ height: 'auto' }}
       />
       <p>
         <strong>Location: </strong>

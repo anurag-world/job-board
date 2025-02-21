@@ -17,7 +17,7 @@ export default function JobTitleTags({ data }: JobTitleTagsProps) {
             className="border border-solid border-gray-200 px-3 py-2 rounded-full cursor-pointer shadow hover:shadow-md"
             key={job.job_id}
           >
-            <span className="font-open-sans text-xs font-semibold">
+            <span className="font-open-sans text-xs font-medium">
               {job.job_title}
             </span>
           </div>

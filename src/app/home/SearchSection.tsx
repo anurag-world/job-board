@@ -1,5 +1,3 @@
-import React from 'react';
-
 type SearchProps = {
   styles: { readonly [key: string]: string };
   skills: string;

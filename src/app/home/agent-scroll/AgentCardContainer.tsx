@@ -1,5 +1,5 @@
 import { JobProps } from '@/types/Job';
-import { truncateString } from '@/functions/strings';
+import { truncateString } from '@/lib/functions/strings';
 import AgentCard from './AgentCard';
 
 interface AgentCardContainerProps {

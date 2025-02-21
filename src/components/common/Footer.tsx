@@ -4,7 +4,9 @@ export default function Footer() {
   const year = new Date().getFullYear();
   return (
     <div className={styles.footerContainer}>
-      <p>&copy; {`${year} Kodebloc | TOS | Privacy Policy | Manage Cookies`}</p>
+      <p className="font-open-sans text-sm font-medium">
+        &copy; {`${year} Kodebloc | TOS | Privacy Policy | Manage Cookies`}
+      </p>
     </div>
   );
 }

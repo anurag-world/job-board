@@ -48,7 +48,7 @@
   border-radius: 2.5rem;
   background: #1d4ed8;
   color: white;
-  font-family: 'Open Sans', serif;
+  font-family: var(--font-open-sans);
   font-weight: 600;
   font-size: 1.125rem;
   line-height: 1.2;

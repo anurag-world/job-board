@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect, useState } from 'react';
 import styles from '@/styles/Home.module.css';
 import Header from './home/Header';
@@ -9,7 +11,6 @@ import CompanyCardContainer from './home/company-scroll/CompanyCardContainer';
 import AgentCardContainer from './home/agent-scroll/AgentCardContainer';
 import JobTitleTags from './home/job-title/JobTitleTags';
 import RoleTags from './home/RoleTags';
-import Head from 'next/head';
 
 export default function Home() {
   const [skills, setSkills] = useState('');
@@ -26,9 +27,6 @@ export default function Home() {
 
   return (
     <div>
-      <Head>
-        <title>KodeBloc JobFinder</title>
-      </Head>
       <Header />
       <SearchSection
         styles={styles}
