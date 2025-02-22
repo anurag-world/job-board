@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { Button } from '@mui/material';
 
 export default function Navbar() {
   return (
@@ -15,12 +16,18 @@ export default function Navbar() {
         {/* Navigation Links */}
         <div className="hidden md:flex items-center">
           <div className="mr-4">
-            <button className="mr-3 border border-solid border-white text-white px-4 py-2 rounded-xl">
+            <Button
+              href="/login"
+              className="mr-3 border border-solid border-white text-white px-4 py-2 rounded-xl"
+            >
               Login
-            </button>
-            <button className="bg-white text-blue-700 px-4 py-2 rounded-xl">
+            </Button>
+            <Button
+              href="/signup"
+              className="bg-white text-blue-700 px-4 py-2 rounded-xl"
+            >
               Sign Up
-            </button>
+            </Button>
           </div>
 
           <div className="border border-solid border-gray-200 h-5"></div>
