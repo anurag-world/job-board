@@ -115,7 +115,12 @@ export default function JobDetail() {
             <IconButton aria-label="add to favorites">
               <BookmarkBorderOutlinedIcon />
             </IconButton>
-            <Button variant="contained" size="medium">
+            <Button
+              href={data.job_apply_link}
+              target="_blank"
+              variant="contained"
+              size="medium"
+            >
               Apply
             </Button>
           </CardActions>
