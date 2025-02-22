@@ -29,36 +29,63 @@ export default function JobDetail() {
   };
 
   // Clean up job description
-  const formatJobDescription = (description: string) => {
+  const formatJobDescription = (
+    description: string
+  ): string | React.ReactElement[] => {
     if (!description) return '';
 
-    return description
+    const lines = description
       .replace(/\n\n/g, '\n') // Reduce double newlines to a single newline
       .split('\n') // Split into an array
-      .filter((i) => i)
-      .map((line, index) => {
+      .filter((line) => line.trim() !== '');
+
+    const formattedContent: React.ReactElement[] = [];
+    let bulletPoints: React.ReactElement[] = [];
+
+    lines.forEach((line, index) => {
+      if (line.startsWith('•')) {
+        bulletPoints.push(
+          <li className="pb-[2px]" key={index}>
+            {line.replace('•', '').trim()}
+          </li>
+        );
+      } else {
+        if (bulletPoints.length > 0) {
+          formattedContent.push(
+            <ul key={`ul-${index}`} className="font-open-sans list-disc pl-5">
+              {bulletPoints}
+            </ul>
+          );
+          bulletPoints = [];
+        }
+
         if (
           line.match(/Overview|Key Responsibilities|Required Qualifications/g)
-        )
-          return (
+        ) {
+          formattedContent.push(
             <h3 key={index} className="font-roboto font-bold mb-2 mt-4">
               {line}
             </h3>
           );
-
-        if (line.startsWith('•'))
-          return (
-            <li key={index} className="font-open-sans pb-[2px]">
-              {line.replace('•', '').trim()}
-            </li>
+        } else {
+          formattedContent.push(
+            <p key={index} className={styles.jobText}>
+              {line.replaceAll(',', ', ')}
+            </p>
           );
+        }
+      }
+    });
 
-        return (
-          <p key={index} className={styles.jobText}>
-            {line.replaceAll(',', ', ')}
-          </p>
-        );
-      });
+    if (bulletPoints.length > 0) {
+      formattedContent.push(
+        <ul key="ul-last" className="font-open-sans list-disc pl-5">
+          {bulletPoints}
+        </ul>
+      );
+    }
+
+    return formattedContent;
   };
 
   if (!data) return <div>Loading...</div>;
@@ -78,7 +105,7 @@ export default function JobDetail() {
             <div className="grid grid-cols-2">
               {/* Title */}
               <div>
-                <h1 className="font-roboto text-xl font-bold mb-1">
+                <h1 className="font-roboto text-xl font-bold">
                   {data.job_title}
                 </h1>
                 <div className="flex items-center mb-4">
@@ -90,16 +117,19 @@ export default function JobDetail() {
                     href={data.employer_reviews[0].reviews_link}
                     target="_blank"
                   >
-                    <StarOutlinedIcon color="warning" className="mx-1" />
+                    <StarOutlinedIcon
+                      fontSize="small"
+                      color="warning"
+                      className="mx-1"
+                    />
                     <p className="font-open-sans text-sm font-medium">
                       {data.employer_reviews[0].num_stars.toString()}
                     </p>
                     <Divider
                       variant="middle"
                       orientation="vertical"
-                      sx={{ height: 14 }}
+                      sx={{ height: 14, m: '0.25rem' }}
                       flexItem
-                      className="mx-1"
                     />
                     <p className="font-open-sans text-sm font-medium">
                       {`${data.employer_reviews[0].review_count} Reviews`}
