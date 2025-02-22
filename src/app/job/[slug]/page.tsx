@@ -19,10 +19,42 @@ export default function JobDetail() {
     setData(detailMock.data[0]);
   }, []);
 
+  const formatJobDescription = (description: string) => {
+    if (!description) return '';
+
+    return description
+      .replace(/\n\n/g, '\n') // Reduce double newlines to a single newline
+      .split('\n') // Split into an array
+      .filter((i) => i)
+      .map((line, index) => {
+        if (
+          line.match(/Overview|Key Responsibilities|Required Qualifications/g)
+        )
+          return (
+            <h3 key={index} className="font-roboto font-bold mb-2 mt-4">
+              {line}
+            </h3>
+          );
+
+        if (line.startsWith('•'))
+          return (
+            <li key={index} className="font-open-sans">
+              {line.replace('•', '').trim()}
+            </li>
+          );
+
+        return (
+          <p key={index} className="font-open-sans my-2">
+            {line}
+          </p>
+        );
+      });
+  };
+
   if (!data) return <div>Loading...</div>;
 
   return (
-    <div className="flex flex-col items-center h-screen mt-20 gap-4">
+    <div className="flex flex-col items-center mt-20 gap-4">
       <div className="w-1/2">
         <Card
           variant="outlined"
@@ -36,7 +68,9 @@ export default function JobDetail() {
             <div className="grid grid-cols-2">
               {/* Title */}
               <div>
-                <h1 className="text-lg font-bold">{data.job_title}</h1>
+                <h1 className="font-roboto text-lg font-bold">
+                  {data.job_title}
+                </h1>
                 <p className="font-open-sans text-sm font-medium mb-4">
                   {data.employer_name}
                 </p>
@@ -90,8 +124,12 @@ export default function JobDetail() {
       </div>
 
       <div className="w-1/2">
-        <p className="font-bold pb-2">Job Description </p>
-        <p>{data.job_description}</p>
+        <h2 className="font-roboto text-lg font-bold">Job Description </h2>
+        {data.job_description ? (
+          <div>{formatJobDescription(data.job_description)}</div>
+        ) : (
+          <p>No description available.</p>
+        )}
       </div>
 
       <Link href="/">Back to Jobs</Link>
