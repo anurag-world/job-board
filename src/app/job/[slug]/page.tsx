@@ -11,6 +11,7 @@ import WorkOutlineOutlinedIcon from '@mui/icons-material/WorkOutlineOutlined';
 import FmdGoodOutlinedIcon from '@mui/icons-material/FmdGoodOutlined';
 import BookmarkBorderOutlinedIcon from '@mui/icons-material/BookmarkBorderOutlined';
 import { Button, CardActions, IconButton } from '@mui/material';
+import styles from '@/styles/JobDetail.module.css';
 
 export default function JobDetail() {
   const [data, setData] = useState<JobDetailProps>();
@@ -44,7 +45,7 @@ export default function JobDetail() {
           );
 
         return (
-          <p key={index} className="font-open-sans my-2">
+          <p key={index} className={styles.jobText}>
             {line}
           </p>
         );
@@ -124,12 +125,23 @@ export default function JobDetail() {
       </div>
 
       <div className="w-1/2">
-        <h2 className="font-roboto text-lg font-bold">Job Description </h2>
-        {data.job_description ? (
-          <div>{formatJobDescription(data.job_description)}</div>
-        ) : (
-          <p>No description available.</p>
-        )}
+        <Card
+          variant="outlined"
+          sx={{
+            borderRadius: 2,
+            background: 'white',
+          }}
+          className="shadow"
+        >
+          <CardContent sx={{ p: '24px 24px 0' }}>
+            <h2 className="font-roboto text-lg font-bold">Job Description </h2>
+            {data.job_description ? (
+              <div>{formatJobDescription(data.job_description)}</div>
+            ) : (
+              <p>No description available.</p>
+            )}
+          </CardContent>
+        </Card>
       </div>
 
       <Link href="/">Back to Jobs</Link>

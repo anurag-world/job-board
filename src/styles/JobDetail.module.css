@@ -1,0 +1,10 @@
+.jobText {
+  font-family: var(--font-open-sans);
+  /* margin-top: 0.5rem; */
+}
+.jobText:first-of-type {
+  margin-bottom: 1rem;
+}
+.jobText:last-of-type {
+  margin-top: 1rem;
+}
