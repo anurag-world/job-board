@@ -72,7 +72,7 @@ export default function JobDetail() {
           }}
           className="shadow"
         >
-          <CardContent sx={{ p: '24px 24px 0' }}>
+          <CardContent sx={{ p: '24px' }}>
             <div className="grid grid-cols-2">
               {/* Title */}
               <div>
@@ -92,7 +92,7 @@ export default function JobDetail() {
                 </div>
 
                 {/* Employement Type */}
-                <div className="font-open-sans text-sm mb-1 flex items-center gap-1">
+                <div className="font-open-sans text-sm flex items-center gap-1">
                   <div className="mb-px">
                     <WorkOutlineOutlinedIcon fontSize="small" color="action" />
                   </div>
@@ -112,35 +112,43 @@ export default function JobDetail() {
               </div>
             </div>
           </CardContent>
-          <CardActions sx={{ p: '8px 24px 16px' }} className="justify-end">
-            <Button
-              href="/"
-              style={{
-                fontFamily: 'var(--font-open-sans)',
-                textTransform: 'capitalize',
-              }}
-            >
-              Back to Jobs
-            </Button>
-            <IconButton
-              onClick={handleFavorites}
-              style={{ marginLeft: 0 }}
-              aria-label="add to favorites"
-            >
-              {favorites ? (
-                <BookmarkBorderOutlinedIcon />
-              ) : (
-                <BookmarkOutlinedIcon color="warning" />
-              )}
-            </IconButton>
-            <Button
-              href={data.job_apply_link}
-              target="_blank"
-              variant="contained"
-              size="medium"
-            >
-              Apply
-            </Button>
+          <CardActions
+            sx={{ p: '8px 24px 16px' }}
+            className="flex justify-between border-t border-solid border-gray-200"
+          >
+            <div>
+              <p className="font-open-sans text-sm">{`Posted: ${data.job_posted_at}`}</p>
+            </div>
+            <div>
+              <Button
+                href="/"
+                style={{
+                  fontFamily: 'var(--font-open-sans)',
+                  textTransform: 'capitalize',
+                }}
+              >
+                Back to Jobs
+              </Button>
+              <IconButton
+                onClick={handleFavorites}
+                aria-label="add to favorites"
+              >
+                {favorites ? (
+                  <BookmarkBorderOutlinedIcon />
+                ) : (
+                  <BookmarkOutlinedIcon color="warning" />
+                )}
+              </IconButton>
+              <Button
+                sx={{ ml: 1 }}
+                href={data.job_apply_link}
+                target="_blank"
+                variant="contained"
+                size="medium"
+              >
+                Apply
+              </Button>
+            </div>
           </CardActions>
         </Card>
       </div>
@@ -154,7 +162,7 @@ export default function JobDetail() {
           }}
           className="shadow"
         >
-          <CardContent sx={{ p: '24px 24px 0' }}>
+          <CardContent sx={{ p: '24px' }}>
             <h2 className="font-roboto text-lg font-bold">Job Description </h2>
             {data.job_description ? (
               <div>{formatJobDescription(data.job_description)}</div>

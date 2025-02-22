@@ -14,4 +14,5 @@ export interface JobDetailProps {
   job_employment_type: string;
   job_description: string;
   job_apply_link: string;
+  job_posted_at: string;
 }
