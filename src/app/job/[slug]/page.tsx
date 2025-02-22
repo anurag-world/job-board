@@ -10,8 +10,10 @@ import WorkOutlineOutlinedIcon from '@mui/icons-material/WorkOutlineOutlined';
 import FmdGoodOutlinedIcon from '@mui/icons-material/FmdGoodOutlined';
 import BookmarkBorderOutlinedIcon from '@mui/icons-material/BookmarkBorderOutlined';
 import BookmarkOutlinedIcon from '@mui/icons-material/BookmarkOutlined';
-import { Button, CardActions, IconButton } from '@mui/material';
+import StarOutlinedIcon from '@mui/icons-material/StarOutlined';
+import { Button, CardActions, Divider, IconButton } from '@mui/material';
 import styles from '@/styles/JobDetail.module.css';
+import Link from 'next/link';
 
 export default function JobDetail() {
   const [data, setData] = useState<JobDetailProps>();
@@ -46,7 +48,7 @@ export default function JobDetail() {
 
         if (line.startsWith('•'))
           return (
-            <li key={index} className="font-open-sans">
+            <li key={index} className="font-open-sans pb-[2px]">
               {line.replace('•', '').trim()}
             </li>
           );
@@ -79,9 +81,31 @@ export default function JobDetail() {
                 <h1 className="font-roboto text-xl font-bold mb-1">
                   {data.job_title}
                 </h1>
-                <p className="font-open-sans text-sm font-medium mb-4">
-                  {data.employer_name}
-                </p>
+                <div className="flex items-center mb-4">
+                  <p className="font-open-sans text-sm font-medium">
+                    {data.employer_name}
+                  </p>
+                  <Link
+                    className="flex items-center"
+                    href={data.employer_reviews[0].reviews_link}
+                    target="_blank"
+                  >
+                    <StarOutlinedIcon color="warning" className="mx-1" />
+                    <p className="font-open-sans text-sm font-medium">
+                      {data.employer_reviews[0].num_stars.toString()}
+                    </p>
+                    <Divider
+                      variant="middle"
+                      orientation="vertical"
+                      sx={{ height: 14 }}
+                      flexItem
+                      className="mx-1"
+                    />
+                    <p className="font-open-sans text-sm font-medium">
+                      {`${data.employer_reviews[0].review_count} Reviews`}
+                    </p>
+                  </Link>
+                </div>
 
                 {/* Location */}
                 <div className="font-open-sans text-sm mb-1 flex items-center gap-1">
@@ -117,7 +141,10 @@ export default function JobDetail() {
             className="flex justify-between border-t border-solid border-gray-200"
           >
             <div>
-              <p className="font-open-sans text-sm">{`Posted: ${data.job_posted_at}`}</p>
+              <p className="font-open-sans text-sm">
+                {`Posted: `}
+                <span className="font-semibold">{data.job_posted_at}</span>
+              </p>
             </div>
             <div>
               <Button

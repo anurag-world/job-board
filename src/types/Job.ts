@@ -6,6 +6,12 @@ export interface JobProps {
   job_publisher?: string;
 }
 
+export interface EmployerReviews {
+  num_stars: number;
+  review_count: number;
+  reviews_link: string;
+}
+
 export interface JobDetailProps {
   job_title: string;
   employer_name: string;
@@ -15,4 +21,5 @@ export interface JobDetailProps {
   job_description: string;
   job_apply_link: string;
   job_posted_at: string;
+  employer_reviews: EmployerReviews[];
 }
