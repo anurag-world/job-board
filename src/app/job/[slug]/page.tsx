@@ -46,7 +46,7 @@ export default function JobDetail() {
 
         return (
           <p key={index} className={styles.jobText}>
-            {line}
+            {line.replaceAll(',', ', ')}
           </p>
         );
       });
@@ -55,7 +55,7 @@ export default function JobDetail() {
   if (!data) return <div>Loading...</div>;
 
   return (
-    <div className="flex flex-col items-center mt-20 gap-4">
+    <div className="flex flex-col items-center my-20 gap-4">
       <div className="w-1/2">
         <Card
           variant="outlined"
@@ -69,7 +69,7 @@ export default function JobDetail() {
             <div className="grid grid-cols-2">
               {/* Title */}
               <div>
-                <h1 className="font-roboto text-lg font-bold">
+                <h1 className="font-roboto text-xl font-bold mb-1">
                   {data.job_title}
                 </h1>
                 <p className="font-open-sans text-sm font-medium mb-4">
@@ -77,28 +77,20 @@ export default function JobDetail() {
                 </p>
 
                 {/* Location */}
-                <p className="font-open-sans text-sm mb-1 flex items-center gap-1">
-                  <span className="font-semibold">
-                    <FmdGoodOutlinedIcon
-                      fontSize="small"
-                      className="mb-[1px]"
-                      color="action"
-                    />
-                  </span>
-                  {data.job_location}
-                </p>
+                <div className="font-open-sans text-sm mb-1 flex items-center gap-1">
+                  <div className="mb-px">
+                    <FmdGoodOutlinedIcon fontSize="small" color="action" />
+                  </div>
+                  <p>{data.job_location}</p>
+                </div>
 
                 {/* Employement Type */}
-                <p className="font-open-sans text-sm mb-1 flex items-center gap-1">
-                  <span className="font-semibold">
-                    <WorkOutlineOutlinedIcon
-                      fontSize="small"
-                      className="mb-[1px]"
-                      color="action"
-                    />
-                  </span>
-                  {data.job_employment_type}
-                </p>
+                <div className="font-open-sans text-sm mb-1 flex items-center gap-1">
+                  <div className="mb-px">
+                    <WorkOutlineOutlinedIcon fontSize="small" color="action" />
+                  </div>
+                  <p>{data.job_employment_type}</p>
+                </div>
               </div>
 
               {/* Logo */}
@@ -114,6 +106,12 @@ export default function JobDetail() {
             </div>
           </CardContent>
           <CardActions sx={{ p: '8px 24px' }} className="justify-end">
+            <Link
+              href="/"
+              className="font-open-sans text-sm font-medium hover:underline"
+            >
+              Back to Jobs
+            </Link>
             <IconButton aria-label="add to favorites">
               <BookmarkBorderOutlinedIcon />
             </IconButton>
@@ -143,8 +141,6 @@ export default function JobDetail() {
           </CardContent>
         </Card>
       </div>
-
-      <Link href="/">Back to Jobs</Link>
     </div>
   );
 }
