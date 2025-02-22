@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { JobDetailProps } from '@/types/Job';
 import detailMock from '@/data/detailMock';
 import Card from '@mui/material/Card';
@@ -10,16 +9,24 @@ import CardContent from '@mui/material/CardContent';
 import WorkOutlineOutlinedIcon from '@mui/icons-material/WorkOutlineOutlined';
 import FmdGoodOutlinedIcon from '@mui/icons-material/FmdGoodOutlined';
 import BookmarkBorderOutlinedIcon from '@mui/icons-material/BookmarkBorderOutlined';
+import BookmarkOutlinedIcon from '@mui/icons-material/BookmarkOutlined';
 import { Button, CardActions, IconButton } from '@mui/material';
 import styles from '@/styles/JobDetail.module.css';
 
 export default function JobDetail() {
   const [data, setData] = useState<JobDetailProps>();
+  const [favorites, setFavorites] = useState<boolean>(false);
 
   useEffect(() => {
     setData(detailMock.data[0]);
   }, []);
 
+  // Set favorites
+  const handleFavorites = (): void => {
+    setFavorites((favorites) => !favorites);
+  };
+
+  // Clean up job description
   const formatJobDescription = (description: string) => {
     if (!description) return '';
 
@@ -105,15 +112,26 @@ export default function JobDetail() {
               </div>
             </div>
           </CardContent>
-          <CardActions sx={{ p: '8px 24px' }} className="justify-end">
-            <Link
+          <CardActions sx={{ p: '8px 24px 16px' }} className="justify-end">
+            <Button
               href="/"
-              className="font-open-sans text-sm font-medium hover:underline"
+              style={{
+                fontFamily: 'var(--font-open-sans)',
+                textTransform: 'capitalize',
+              }}
             >
               Back to Jobs
-            </Link>
-            <IconButton aria-label="add to favorites">
-              <BookmarkBorderOutlinedIcon />
+            </Button>
+            <IconButton
+              onClick={handleFavorites}
+              style={{ marginLeft: 0 }}
+              aria-label="add to favorites"
+            >
+              {favorites ? (
+                <BookmarkBorderOutlinedIcon />
+              ) : (
+                <BookmarkOutlinedIcon color="warning" />
+              )}
             </IconButton>
             <Button
               href={data.job_apply_link}
