@@ -13,10 +13,9 @@ import FmdGoodOutlinedIcon from '@mui/icons-material/FmdGoodOutlined';
 import BookmarkBorderOutlinedIcon from '@mui/icons-material/BookmarkBorderOutlined';
 import BookmarkOutlinedIcon from '@mui/icons-material/BookmarkOutlined';
 import StarOutlinedIcon from '@mui/icons-material/StarOutlined';
-import { JobDetailProps } from '@/types/Job';
+import { JobDetailDataProps } from './JobDetailDesc';
 
-interface JobDetailHeadingProps {
-  data: JobDetailProps;
+interface JobDetailHeadingProps extends JobDetailDataProps {
   handleFavorites: () => void;
   favorites: boolean;
 }
