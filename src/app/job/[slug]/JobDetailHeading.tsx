@@ -1,3 +1,5 @@
+'use client';
+
 import {
   Button,
   Card,
@@ -14,17 +16,16 @@ import BookmarkBorderOutlinedIcon from '@mui/icons-material/BookmarkBorderOutlin
 import BookmarkOutlinedIcon from '@mui/icons-material/BookmarkOutlined';
 import StarOutlinedIcon from '@mui/icons-material/StarOutlined';
 import { JobDetailDataProps } from './JobDetailDesc';
+import { useState } from 'react';
 
-interface JobDetailHeadingProps extends JobDetailDataProps {
-  handleFavorites: () => void;
-  favorites: boolean;
-}
+export default function JobDetailHeading({ data }: JobDetailDataProps) {
+  const [favorites, setFavorites] = useState<boolean>(false);
 
-export default function JobDetailHeading({
-  data,
-  handleFavorites,
-  favorites,
-}: JobDetailHeadingProps) {
+  // Set favorites
+  const handleFavorites = (): void => {
+    setFavorites((favorites) => !favorites);
+  };
+
   return (
     <section className="w-1/2">
       <Card
