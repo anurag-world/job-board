@@ -23,7 +23,7 @@ export default function CompanyCard({
   // Navigate to the job detail page
   const handleShowJobs = () => {
     const slug = createSlug(`${job_title}-${employer_name}`);
-    router.push(`/job/${slug}?id=${job_id}`);
+    router.push(`/job/${slug}-${job_id}`);
   };
 
   return (
