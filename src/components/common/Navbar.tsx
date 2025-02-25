@@ -9,7 +9,7 @@ export default function Navbar() {
         {/* Logo */}
         <div className="text-2xl font-bold">
           <Link href="/" className="text-white">
-            JobFinder
+            KodeBloc Jobs
           </Link>
         </div>
 

@@ -92,7 +92,8 @@ export default function JobDetail() {
 
   return (
     <div className="flex flex-col items-center my-20 gap-4">
-      <div className="w-1/2">
+      {/* Job Heading */}
+      <section className="w-1/2">
         <Card
           variant="outlined"
           sx={{
@@ -208,9 +209,10 @@ export default function JobDetail() {
             </div>
           </CardActions>
         </Card>
-      </div>
+      </section>
 
-      <div className="w-1/2">
+      {/* Job Description */}
+      <section className="w-1/2">
         <Card
           variant="outlined"
           sx={{
@@ -228,7 +230,7 @@ export default function JobDetail() {
             )}
           </CardContent>
         </Card>
-      </div>
+      </section>
     </div>
   );
 }
