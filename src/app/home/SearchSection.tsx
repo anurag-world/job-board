@@ -1,21 +1,17 @@
+'use client';
+
+import { useState } from 'react';
 import { Button } from '@mui/material';
 import styles from '@/styles/Home.module.css';
 
-type SearchProps = {
-  skills: string;
-  setSkills: (value: string) => void;
-  location: string;
-  setLocation: (value: string) => void;
-  handleSearch: () => void;
-};
+export default function SearchSection() {
+  const [skills, setSkills] = useState('');
+  const [location, setLocation] = useState('');
 
-export default function SearchSection({
-  skills,
-  setSkills,
-  location,
-  setLocation,
-  handleSearch,
-}: SearchProps) {
+  function handleSearch(): void {
+    throw new Error('Function not implemented.');
+  }
+
   return (
     <section className="flex justify-center mb-20">
       <form onSubmit={handleSearch}>

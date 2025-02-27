@@ -5,7 +5,7 @@ export default function Navbar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
-        <Toolbar>
+        <Toolbar sx={{ mr: 2 }}>
           <Link href="/" className="flex-grow">
             <Typography variant="h6" component="div">
               KodeBloc Jobs
