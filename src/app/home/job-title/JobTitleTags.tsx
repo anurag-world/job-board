@@ -1,12 +1,8 @@
 import { truncateString } from '@/lib/functions/strings';
-import { JobProps } from '@/types/Job';
+import { DataJobProps } from '@/types/Data';
 import { Chip } from '@mui/material';
 
-interface JobTitleTagsProps {
-  data: JobProps[];
-}
-
-export default function JobTitleTags({ data }: JobTitleTagsProps) {
+export default function JobTitleTags({ data }: DataJobProps) {
   return (
     <div className="flex flex-col items-center mt-7 mb-12 px-4">
       <h1 className="font-roboto text-2xl font-extrabold tracking-wide mb-6">

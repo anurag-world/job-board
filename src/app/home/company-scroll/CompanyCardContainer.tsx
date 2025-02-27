@@ -1,14 +1,8 @@
 import CompanyCard from './CompanyCard';
-import { JobProps } from '@/types/Job';
+import { DataJobProps } from '@/types/Data';
 import { truncateString } from '@/lib/functions/strings';
 
-interface CompanyCardContainerProps {
-  data: JobProps[];
-}
-
-export default function CompanyCardContainer({
-  data,
-}: CompanyCardContainerProps) {
+export default function CompanyCardContainer({ data }: DataJobProps) {
   return (
     <>
       {data.map(
