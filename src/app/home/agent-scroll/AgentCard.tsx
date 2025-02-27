@@ -45,7 +45,6 @@ export default function AgentCard({
           onClick={() => handleShowJobs()}
           variant="contained"
           className="font-roboto text-sm font-semibold rounded-2xl"
-          color="info"
         >
           View Jobs
         </Button>
