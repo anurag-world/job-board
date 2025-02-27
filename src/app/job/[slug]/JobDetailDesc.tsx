@@ -1,5 +1,4 @@
 import { Card, CardContent } from '@mui/material';
-import React from 'react';
 import formatJobDescription from './formatJobDesc';
 import { JobDetailProps } from '@/types/Job';
 

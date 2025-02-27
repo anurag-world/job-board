@@ -1,6 +1,5 @@
 import { JobProps } from '@/types/Job';
 import Image from 'next/image';
-import React from 'react';
 
 export default function AgentCard({
   employer_name,

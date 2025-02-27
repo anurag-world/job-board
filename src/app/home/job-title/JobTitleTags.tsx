@@ -1,4 +1,6 @@
+import { truncateString } from '@/lib/functions/strings';
 import { JobProps } from '@/types/Job';
+import { Chip } from '@mui/material';
 
 interface JobTitleTagsProps {
   data: JobProps[];
@@ -11,16 +13,14 @@ export default function JobTitleTags({ data }: JobTitleTagsProps) {
         Find Jobs by Title
       </h1>
 
-      <div className="flex flex-row flex-wrap justify-center gap-3 container">
+      <div className="container flex flex-wrap justify-center gap-3">
         {data.map((job) => (
-          <div
-            className="border border-solid border-gray-200 px-3 py-2 rounded-full cursor-pointer shadow hover:shadow-md"
+          <Chip
+            label={truncateString(job.job_title, 40)}
             key={job.job_id}
-          >
-            <span className="font-open-sans text-xs font-medium">
-              {job.job_title}
-            </span>
-          </div>
+            variant="outlined"
+            className="font-open-sans"
+          />
         ))}
       </div>
     </div>
