@@ -1,12 +1,8 @@
-import { JobProps } from '@/types/Job';
+import { DataJobProps } from '@/types/Data';
 import AgentCard from './AgentCard';
 import { truncateString } from '@/lib/functions/strings';
 
-interface AgentCardContainerProps {
-  data: JobProps[];
-}
-
-export default function AgentCardContainer({ data }: AgentCardContainerProps) {
+export default function AgentCardContainer({ data }: DataJobProps) {
   return (
     <>
       {data.map(
@@ -15,6 +11,7 @@ export default function AgentCardContainer({ data }: AgentCardContainerProps) {
           company.job_publisher === 'LinkedIn' && (
             <AgentCard
               key={company.job_id}
+              job_id={company.job_id}
               employer_name={truncateString(company.employer_name, 28)}
               employer_logo={company.employer_logo}
               job_title={truncateString(company.job_title, 28)}
