@@ -39,14 +39,14 @@ export default function CompanyCard({
           alt="logo"
         />
       </div>
-      <div className="flex flex-col justify-between h-[100px]">
+      <div className="flex flex-col justify-between h-[100px] pb-1">
         <span className="block font-open-sans text-xs mb-4 px-1">
           {`${employer_name} is hiring ${job_title}`}
         </span>
         <Button
           onClick={() => handleShowJobs()}
           variant="contained"
-          className="font-roboto text-sm font-semibold rounded-2xl"
+          className="font-roboto text-sm font-semibold rounded-2xl mx-2"
         >
           View Jobs
         </Button>

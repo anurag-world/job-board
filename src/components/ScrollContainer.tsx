@@ -30,8 +30,8 @@ export default function ScrollContainer({
     <div className={styles.container}>
       <Typography
         component="h1"
-        className="font-roboto text-2xl font-extrabold tracking-wide mb-6"
-        color="info"
+        className="font-roboto text-2xl font-extrabold tracking-wide mb-6 capitalize"
+        color="primary"
       >
         {title}
       </Typography>

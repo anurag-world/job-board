@@ -6,11 +6,14 @@ export default function Header() {
       <Typography
         component="h1"
         className="font-roboto font-black text-5xl tracking-wider mx-auto mb-6"
-        color="info"
+        color="primary"
       >
         Your Dream Job Awaits!
       </Typography>
-      <Typography className="font-open-sans text-xl italic font-medium mb-7">
+      <Typography
+        className="font-open-sans text-xl italic font-medium mb-7"
+        color="textSecondary"
+      >
         Discover thousands of opportunities tailored to your skills and
         aspirations.
       </Typography>

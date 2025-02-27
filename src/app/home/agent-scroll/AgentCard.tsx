@@ -39,12 +39,12 @@ export default function AgentCard({
           alt="logo"
         />
       </div>
-      <div className="flex flex-col justify-between w-full h-[100px]">
+      <div className="flex flex-col justify-between w-full h-[100px] pb-1">
         <span className="block font-open-sans text-sm font-medium mb-4">{`by ${employer_name}`}</span>
         <Button
           onClick={() => handleShowJobs()}
           variant="contained"
-          className="font-roboto text-sm font-semibold rounded-2xl"
+          className="font-roboto text-sm font-semibold rounded-2xl mx-2"
         >
           View Jobs
         </Button>
