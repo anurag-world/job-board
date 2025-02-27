@@ -11,7 +11,7 @@ export default function Navbar() {
               KodeBloc Jobs
             </Typography>
           </Link>
-          <Button variant="contained" href="/login" size="small">
+          <Button variant="contained" href="/login" size="small" color="info">
             Login
           </Button>
           <Button
@@ -19,6 +19,7 @@ export default function Navbar() {
             href="/signup"
             sx={{ ml: 1 }}
             size="small"
+            color="info"
           >
             Sign Up
           </Button>

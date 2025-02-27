@@ -1,3 +1,5 @@
+import { Button } from '@mui/material';
+
 type SearchProps = {
   styles: { readonly [key: string]: string };
   skills: string;
@@ -42,9 +44,9 @@ export default function SearchSection({
             style={{ minWidth: 210 }}
             required
           />
-          <button type="submit" className={styles.search}>
+          <Button variant="contained" type="submit" className={styles.search}>
             Search
-          </button>
+          </Button>
         </div>
       </form>
     </section>

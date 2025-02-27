@@ -2,6 +2,7 @@ import { JobProps } from '@/types/Job';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { createSlug } from '@/lib/functions/strings';
+import { Button } from '@mui/material';
 
 export default function CompanyCard({
   job_id,
@@ -38,16 +39,18 @@ export default function CompanyCard({
           alt="logo"
         />
       </div>
-      <div className="flex flex-col justify-between w-full h-[100px]">
+      <div className="flex flex-col justify-between h-[100px]">
         <span className="block font-open-sans text-xs mb-4 px-1">
           {`${employer_name} is hiring ${job_title}`}
         </span>
-        <button
+        <Button
           onClick={() => handleShowJobs()}
-          className="text-sm font-roboto p-2 bg-sky-100 rounded-2xl text-blue-700 font-semibold"
+          variant="contained"
+          className="font-roboto text-sm font-semibold rounded-2xl"
+          color="info"
         >
           View Jobs
-        </button>
+        </Button>
       </div>
     </div>
   );

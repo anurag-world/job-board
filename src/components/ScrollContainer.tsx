@@ -2,6 +2,7 @@ import { Component, useRef } from 'react';
 import styles from '@/styles/Sbc.module.css';
 import LeftScrollButtons from '@/components/LeftScrollButtons';
 import RightScrollButtons from '@/components/RightScrollButtons';
+import { Typography } from '@mui/material';
 
 interface ScrollContainerProps {
   title: string;
@@ -27,9 +28,13 @@ export default function ScrollContainer({
 
   return (
     <div className={styles.container}>
-      <h1 className="font-roboto text-2xl font-extrabold tracking-wide text-blue-700 mb-6">
+      <Typography
+        component="h1"
+        className="font-roboto text-2xl font-extrabold tracking-wide mb-6"
+        color="info"
+      >
         {title}
-      </h1>
+      </Typography>
 
       <div className="relative w-3/5 max-xl:w-11/12 px-1">
         {/* Scrollable container */}
