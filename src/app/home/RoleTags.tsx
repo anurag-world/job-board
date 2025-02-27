@@ -6,14 +6,29 @@ export default function RoleTags() {
     <div className="container mx-auto">
       <Typography
         component="h1"
-        className="text-2xl font-roboto font-extrabold mb-1 capitalize"
+        sx={{
+          fontFamily: 'var(--font-roboto)',
+          fontSize: '1.5rem' /* 24px */,
+          lineHeight: '2rem' /* 32px */,
+          fontWeight: 800,
+          letterSpacing: '0.025em',
+          textTransform: 'capitalize',
+          mb: '0.25rem' /* 4px */,
+        }}
         color="textPrimary"
       >
         Search by Popular Roles
       </Typography>
       <Typography
         component="h2"
-        className="font-roboto font-medium text-lg mb-6"
+        sx={{
+          fontFamily: 'var(--font-roboto)',
+          fontSize: '1.125rem' /* 18px */,
+          lineHeight: '1.75rem' /* 28px */,
+          fontWeight: 500,
+          letterSpacing: '0.025em',
+          mb: '1.5rem' /* 24px */,
+        }}
         color="textSecondary"
       >
         Select a role to show relevant jobs for it!

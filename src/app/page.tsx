@@ -1,7 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import styles from '@/styles/Home.module.css';
+import { useState } from 'react';
 import Header from './home/Header';
 import SearchSection from './home/SearchSection';
 import apiData from '@/data/apiMock';
@@ -15,21 +14,17 @@ import RoleTags from './home/RoleTags';
 export default function Home() {
   const [skills, setSkills] = useState('');
   const [location, setLocation] = useState('');
-  const [data, setData] = useState<JobProps[]>([]);
 
   function handleSearch(): void {
     throw new Error('Function not implemented.');
   }
 
-  useEffect(() => {
-    setData(apiData.data);
-  }, []);
+  const data: JobProps[] = apiData.data;
 
   return (
     <div>
       <Header />
       <SearchSection
-        styles={styles}
         skills={skills}
         setSkills={setSkills}
         location={location}

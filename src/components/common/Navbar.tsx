@@ -11,15 +11,34 @@ export default function Navbar() {
               KodeBloc Jobs
             </Typography>
           </Link>
-          <Button variant="contained" href="/login" size="small" color="info">
+          <Button
+            variant="contained"
+            href="/login"
+            size="small"
+            sx={{
+              background: '#C7E1F7',
+              color: '#333',
+              textTransform: 'capitalize',
+              fontSize: '0.875rem',
+              fontFamily: 'var(--font-roboto)',
+              fontWeight: '500',
+            }}
+          >
             Login
           </Button>
           <Button
             variant="contained"
             href="/signup"
-            sx={{ ml: 1 }}
+            sx={{
+              ml: 1,
+              background: '#C7E1F7',
+              color: '#333',
+              textTransform: 'capitalize',
+              fontSize: '0.875rem',
+              fontFamily: 'var(--font-roboto)',
+              fontWeight: '500',
+            }}
             size="small"
-            color="info"
           >
             Sign Up
           </Button>

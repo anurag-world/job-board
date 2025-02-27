@@ -8,7 +8,15 @@ export default function JobTitleTags({ data }: DataJobProps) {
     <div className="flex flex-col items-center mt-7 mb-12 px-4">
       <Typography
         component="h1"
-        className="font-roboto text-2xl font-extrabold tracking-wide mb-6 capitalize"
+        sx={{
+          fontFamily: 'var(--font-roboto)',
+          fontSize: '1.5rem' /* 24px */,
+          lineHeight: '2rem' /* 32px */,
+          fontWeight: 800,
+          letterSpacing: '0.025em',
+          textTransform: 'capitalize',
+          mb: '1.5rem' /* 24px */,
+        }}
         color="primary"
       >
         Find Jobs by Title
@@ -20,7 +28,11 @@ export default function JobTitleTags({ data }: DataJobProps) {
             <Chip
               label={truncateString(job.job_title, 38)}
               variant="outlined"
-              className="font-open-sans font-medium shadow hover:shadow-md"
+              sx={{
+                fontFamily: 'var(--font-open-sans)',
+                fontWeight: 500,
+              }}
+              className="shadow hover:shadow-md"
             />
           </Link>
         ))}

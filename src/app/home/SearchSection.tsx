@@ -1,7 +1,7 @@
 import { Button } from '@mui/material';
+import styles from '@/styles/Home.module.css';
 
 type SearchProps = {
-  styles: { readonly [key: string]: string };
   skills: string;
   setSkills: (value: string) => void;
   location: string;
@@ -10,7 +10,6 @@ type SearchProps = {
 };
 
 export default function SearchSection({
-  styles,
   skills,
   setSkills,
   location,
@@ -44,7 +43,18 @@ export default function SearchSection({
             style={{ minWidth: 210 }}
             required
           />
-          <Button variant="contained" type="submit" className={styles.search}>
+          <Button
+            variant="contained"
+            type="submit"
+            sx={{
+              ml: '1rem',
+              p: '0.5rem 2rem',
+              borderRadius: '2.5rem',
+              fontFamily: 'var(--font-roboto)',
+              fontWeight: 600,
+              fontSize: '1em',
+            }}
+          >
             Search
           </Button>
         </div>

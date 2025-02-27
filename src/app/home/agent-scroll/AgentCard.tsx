@@ -44,7 +44,14 @@ export default function AgentCard({
         <Button
           onClick={() => handleShowJobs()}
           variant="contained"
-          className="font-roboto text-sm font-semibold rounded-2xl mx-2"
+          sx={{
+            fontFamily: 'var(--font-roboto)',
+            fontSize: '0.875rem' /* 14px */,
+            lineHeight: '1.25rem' /* 20px */,
+            fontWeight: 600,
+            borderRadius: '1rem' /* 16px */,
+            mx: '0.5rem' /* 8px */,
+          }}
         >
           View Jobs
         </Button>
