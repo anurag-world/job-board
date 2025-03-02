@@ -16,7 +16,7 @@ import FmdGoodOutlinedIcon from '@mui/icons-material/FmdGoodOutlined';
 import BookmarkBorderOutlinedIcon from '@mui/icons-material/BookmarkBorderOutlined';
 import BookmarkOutlinedIcon from '@mui/icons-material/BookmarkOutlined';
 import StarOutlinedIcon from '@mui/icons-material/StarOutlined';
-import { JobDetailDataProps } from './JobDetailDesc';
+import { JobDetailDataProps } from './jobDetailDesc';
 
 export default function JobDetailHeading({ data }: JobDetailDataProps) {
   const [favorites, setFavorites] = useState<boolean>(false);

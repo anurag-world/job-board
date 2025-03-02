@@ -1,9 +1,9 @@
-import Header from './home/Header';
-import SearchSection from './home/SearchSection';
+import Header from './home/header';
+import SearchSection from './home/searchSection';
 import apiData from '@/data/apiMock';
 import { JobProps } from '@/types/Job';
-import JobTitleTags from './home/tags/JobTitleTags';
-import RoleTags from './home/tags/RoleTags';
+import JobTitleTags from './home/tags/jobTitleTags';
+import RoleTags from './home/tags/roleTags';
 import HomeScroll from './home/home-scroll/homeScroll';
 
 export default function Home() {
