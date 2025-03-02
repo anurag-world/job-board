@@ -1,4 +1,4 @@
-import CompanyCard from './CompanyCard';
+import CompanyCard from './companyCard';
 import { DataJobProps } from '@/types/Data';
 import { truncateString } from '@/lib/functions/strings';
 

@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import {
   Button,
   Card,
@@ -16,7 +17,6 @@ import BookmarkBorderOutlinedIcon from '@mui/icons-material/BookmarkBorderOutlin
 import BookmarkOutlinedIcon from '@mui/icons-material/BookmarkOutlined';
 import StarOutlinedIcon from '@mui/icons-material/StarOutlined';
 import { JobDetailDataProps } from './JobDetailDesc';
-import { useState } from 'react';
 
 export default function JobDetailHeading({ data }: JobDetailDataProps) {
   const [favorites, setFavorites] = useState<boolean>(false);

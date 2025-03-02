@@ -1,5 +1,5 @@
 import { DataJobProps } from '@/types/Data';
-import AgentCard from './AgentCard';
+import AgentCard from './agentCard';
 import { truncateString } from '@/lib/functions/strings';
 
 export default function AgentCardContainer({ data }: DataJobProps) {
