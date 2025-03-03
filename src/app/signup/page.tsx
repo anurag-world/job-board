@@ -36,7 +36,7 @@ export default function SignUp() {
           password: '',
         }}
         validate={(values) => {
-          const errors = {};
+          const errors: { email?: string } = {};
           if (!values.email) {
             errors.email = 'Required';
           } else if (
