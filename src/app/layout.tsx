@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from 'next';
 import { openSans, roboto } from '@/lib/fonts';
 import Footer from '@/components/common/Footer';
 import Navbar from '@/components/common/Navbar';
+import AuthProvider from '@/context/AuthContext';
 
 export const metadata: Metadata = {
   title: {
@@ -27,11 +28,13 @@ export default function RootLayout({
       <body
         className={`${roboto.variable} ${openSans.variable} font-sans antialiased`}
       >
-        <div>
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
-        </div>
+        <AuthProvider>
+          <div>
+            <Navbar />
+            <main>{children}</main>
+            <Footer />
+          </div>
+        </AuthProvider>
       </body>
     </html>
   );
