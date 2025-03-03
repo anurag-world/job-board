@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '@/lib/firebase/config';
 import { Formik, FormikHelpers } from 'formik';
+import { Button, Input } from '@mui/material';
 
 interface Values {
   email: string;
@@ -35,9 +36,7 @@ export default function SignUp() {
           password: '',
         }}
         validate={(values) => {
-          const errors = {
-            email: '',
-          };
+          const errors = {};
           if (!values.email) {
             errors.email = 'Required';
           } else if (
@@ -48,6 +47,7 @@ export default function SignUp() {
           return errors;
         }}
         onSubmit={handleSignUp}
+        enableReinitialize
       >
         {({
           values,
@@ -57,35 +57,38 @@ export default function SignUp() {
           handleBlur,
           handleSubmit,
           isSubmitting,
+          dirty,
+          isValid,
         }) => (
           <form className="flex flex-col space-y-4" onSubmit={handleSubmit}>
-            <input
+            <Input
               className="border p-2"
               type="email"
               name="email"
               placeholder="Email"
               value={values.email}
-              onChange={handleChange}
-              onBlur={handleBlur}
+              onChange={handleChange('email')}
+              onBlur={handleBlur('email')}
             />
             {errors.email && touched.email && errors.email}
-            <input
+            <Input
               className="border p-2"
               type="password"
               name="password"
               placeholder="Password"
-              onChange={handleChange}
-              onBlur={handleBlur}
+              onChange={handleChange('password')}
+              onBlur={handleBlur('password')}
               value={values.password}
             />
             {errors.password && touched.password && errors.password}
-            <button
+            <Button
               className="bg-blue-500 text-white py-2 px-4"
               type="submit"
-              disabled={isSubmitting}
+              disabled={!isValid || !dirty}
+              loading={isSubmitting}
             >
               Sign Up
-            </button>
+            </Button>
           </form>
         )}
       </Formik>
