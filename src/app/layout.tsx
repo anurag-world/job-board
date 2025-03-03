@@ -2,7 +2,7 @@ import '@/styles/globals.css';
 import type { Metadata, Viewport } from 'next';
 import { openSans, roboto } from '@/lib/fonts';
 import Footer from '@/components/common/Footer';
-import Navbar from '@/components/common/Navbar';
+import Navbar from '@/components/nav/Navbar';
 import AuthProvider from '@/context/AuthContext';
 
 export const metadata: Metadata = {
