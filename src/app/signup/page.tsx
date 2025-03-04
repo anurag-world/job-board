@@ -5,6 +5,7 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '@/lib/firebase/config';
 import { Formik, FormikHelpers } from 'formik';
 import { Button, Input } from '@mui/material';
+import { authPageSchema } from '@/validations/authValidations';
 
 interface Values {
   email: string;
@@ -18,6 +19,7 @@ export default function SignUp() {
     values: Values,
     { setSubmitting }: FormikHelpers<Values>
   ) => {
+    console.log(values);
     try {
       await createUserWithEmailAndPassword(auth, values.email, values.password);
       setSubmitting(false);
@@ -35,17 +37,7 @@ export default function SignUp() {
           email: '',
           password: '',
         }}
-        validate={(values) => {
-          const errors: { email?: string } = {};
-          if (!values.email) {
-            errors.email = 'Required';
-          } else if (
-            !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-          ) {
-            errors.email = 'Invalid email address';
-          }
-          return errors;
-        }}
+        validationSchema={authPageSchema}
         onSubmit={handleSignUp}
         enableReinitialize
       >
