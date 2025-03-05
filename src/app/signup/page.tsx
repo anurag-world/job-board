@@ -6,20 +6,15 @@ import { auth } from '@/lib/firebase/config';
 import { Formik, FormikHelpers } from 'formik';
 import { Button, Input } from '@mui/material';
 import { authPageSchema } from '@/validations/authValidations';
-
-interface Values {
-  email: string;
-  password: string;
-}
+import { AuthValues } from '@/types/auth';
 
 export default function SignUp() {
   const router = useRouter();
 
   const handleSignUp = async (
-    values: Values,
-    { setSubmitting }: FormikHelpers<Values>
+    values: AuthValues,
+    { setSubmitting }: FormikHelpers<AuthValues>
   ) => {
-    console.log(values);
     try {
       await createUserWithEmailAndPassword(auth, values.email, values.password);
       setSubmitting(false);
@@ -68,9 +63,9 @@ export default function SignUp() {
               type="password"
               name="password"
               placeholder="Password"
+              value={values.password}
               onChange={handleChange('password')}
               onBlur={handleBlur('password')}
-              value={values.password}
             />
             {errors.password && touched.password && errors.password}
             <Button
