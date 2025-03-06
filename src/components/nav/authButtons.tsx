@@ -2,17 +2,11 @@
 
 import { useAuth } from '@/context/AuthContext';
 import { Button, Typography } from '@mui/material';
+import styles from '@/styles/AuthButtons.module.css';
 
 export default function AuthButtons() {
   const { user, logout } = useAuth();
-  const buttonStyle = {
-    background: '#C7E1F7',
-    color: '#333',
-    textTransform: 'capitalize',
-    fontSize: '0.875rem',
-    fontFamily: 'var(--font-roboto)',
-    fontWeight: '500',
-  };
+
   return (
     <div className="flex items-center space-x-3">
       {user ? (
@@ -28,7 +22,7 @@ export default function AuthButtons() {
             onClick={logout}
             variant="contained"
             size="small"
-            sx={buttonStyle}
+            className={styles.button}
           >
             Logout
           </Button>
@@ -39,14 +33,14 @@ export default function AuthButtons() {
             variant="contained"
             href="/login"
             size="small"
-            sx={buttonStyle}
+            className={styles.button}
           >
             Login
           </Button>
           <Button
             variant="contained"
             href="/signup"
-            sx={buttonStyle}
+            className={styles.button}
             size="small"
           >
             Sign Up
