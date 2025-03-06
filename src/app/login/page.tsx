@@ -168,6 +168,14 @@ export default function Login() {
                 </p>
               </div>
 
+              {/* Forgot Password */}
+              <Link
+                href={'/forgot-password'}
+                className="text-sm font-semibold self-end underline"
+              >
+                Forgot Password?
+              </Link>
+
               {/* Submit button */}
               <Button
                 variant="contained"
