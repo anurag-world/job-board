@@ -6,8 +6,9 @@ export default function Navbar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
-        <Toolbar sx={{ mr: 2 }}>
-          <Link href="/" className="flex-grow">
+        <Toolbar className="mr-[2px] flex justify-between">
+          {/* Heading */}
+          <Link href="/">
             <Typography variant="h6">KodeBloc Jobs</Typography>
           </Link>
 
