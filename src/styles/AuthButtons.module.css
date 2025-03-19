@@ -1,0 +1,11 @@
+.button {
+  background: lightblue;
+  color: #333;
+  text-transform: capitalize;
+  font-size: 0.875rem;
+  font-family: var(--font-roboto);
+  font-weight: 600;
+}
+.button:hover {
+  font-family: var(--font-roboto);
+}

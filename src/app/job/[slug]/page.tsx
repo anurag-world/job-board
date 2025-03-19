@@ -1,7 +1,7 @@
 import { JobDetailProps } from '@/types/Job';
 import detailMock from '@/data/detailMock';
-import JobDetailHeading from './JobDetailHeading';
-import JobDetailDesc from './JobDetailDesc';
+import JobDetailHeading from './jobDetailHeading';
+import JobDetailDesc from './jobDetailDesc';
 import { getJobDetail, getJobId } from './layout';
 
 export const dynamicParams = false;
